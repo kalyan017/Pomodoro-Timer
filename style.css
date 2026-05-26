@@ -1,0 +1,537 @@
+/* =========================================
+   GOOGLE FONT
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   FULL COLORFUL ANIMATED BACKGROUND
+========================================= */
+body {
+    font-family: 'Poppins', sans-serif;
+
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background: linear-gradient(-45deg,
+            #ff006e,
+            #8338ec,
+            #3a86ff,
+            #06d6a0,
+            #ffbe0b,
+            #fb5607);
+
+    background-size: 400% 400%;
+
+    animation: gradientBG 15s ease infinite;
+
+    position: relative;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================================
+   FLOATING COLOR CIRCLES
+========================================= */
+body::before,
+body::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.5;
+
+    animation: moveBlob 10s infinite alternate ease-in-out;
+}
+
+body::before {
+    background: #ff006e;
+    top: -150px;
+    left: -150px;
+}
+
+body::after {
+    background: #3a86ff;
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 5s;
+}
+
+@keyframes moveBlob {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(50px, 50px) scale(1.2);
+    }
+}
+
+/* =========================================
+   SELECT DROPDOWN
+========================================= */
+#mode {
+    margin-bottom: 30px;
+
+    width: 300px;
+    padding: 15px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    outline: none;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+#mode:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+#mode option {
+    color: white;
+}
+
+/* =========================================
+   GLASSMORPHISM CARD
+========================================= */
+div {
+    width: 430px;
+
+    padding: 50px 35px;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35);
+
+    text-align: center;
+
+    position: relative;
+    z-index: 10;
+
+    animation: cardEntry 1s ease;
+}
+
+/* CARD ENTRY */
+@keyframes cardEntry {
+    from {
+        opacity: 0;
+        transform: translateY(60px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   TIMER DISPLAY
+========================================= */
+#display {
+    font-size: 95px;
+    font-weight: 700;
+
+    color: white;
+
+    margin-bottom: 35px;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(255, 255, 255, 0.4);
+
+    animation: glow 2s infinite ease-in-out;
+}
+
+/* GLOW ANIMATION */
+@keyframes glow {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+button {
+    padding: 14px 24px;
+    margin: 10px;
+
+    border: none;
+    border-radius: 16px;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* START BUTTON */
+#start {
+    background: linear-gradient(135deg,
+            #00f260,
+            #0575e6);
+
+    box-shadow:
+        0 5px 20px rgba(0, 242, 96, 0.5);
+}
+
+/* STOP BUTTON */
+#stop {
+    background: linear-gradient(135deg,
+            #ff416c,
+            #ff4b2b);
+
+    box-shadow:
+        0 5px 20px rgba(255, 65, 108, 0.5);
+}
+
+/* RESET BUTTON */
+#reset {
+    background: linear-gradient(135deg,
+            #f7971e,
+            #ffd200);
+
+    box-shadow:
+        0 5px 20px rgba(255, 210, 0, 0.5);
+}
+
+/* BUTTON HOVER EFFECT */
+button:hover {
+    transform: translateY(-5px) scale(1.08);
+
+    filter: brightness(1.1);
+}
+
+/* BUTTON CLICK */
+button:active {
+    transform: scale(0.92);
+}
+
+/* =========================================
+   BUTTON SHINE EFFECT
+========================================= */
+button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.6),
+            transparent);
+
+    transition: 0.6s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 500px) {
+
+    div {
+        width: 90%;
+        padding: 35px 20px;
+    }
+
+    #display {
+        font-size: 70px;
+    }
+
+    #mode {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+/* =========================================
+   BEAUTIFUL ANIMATED SELECT DROPDOWN
+========================================= */
+
+#mode {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    width: 320px;
+
+    padding: 16px 22px;
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25),
+        inset 0 0 10px rgba(255, 255, 255, 0.08);
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease,
+        border 0.35s ease;
+
+    position: relative;
+
+    margin-bottom: 35px;
+
+    animation: selectEntry 1s ease;
+}
+
+/* =========================================
+   SELECT APPEAR ANIMATION
+========================================= */
+@keyframes selectEntry {
+    from {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+#mode:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        0 10px 35px rgba(255, 255, 255, 0.15),
+        0 0 25px rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================
+   CLICK / FOCUS EFFECT
+========================================= */
+#mode:focus {
+    border: 2px solid #ffffff;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.6),
+        0 0 35px rgba(255, 255, 255, 0.4);
+
+    transform: scale(1.04);
+}
+
+/* =========================================
+   OPTION STYLING
+========================================= */
+#mode option {
+    background: #111827;
+    color: white;
+
+    padding: 12px;
+
+    font-size: 16px;
+}
+
+/* =========================================
+   CUSTOM DROPDOWN ARROW
+========================================= */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "⌄";
+
+    position: absolute;
+
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    pointer-events: none;
+
+    animation: arrowFloat 2s infinite ease-in-out;
+}
+
+/* =========================================
+   ARROW ANIMATION
+========================================= */
+@keyframes arrowFloat {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(-40%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+/* =========================================
+   GLOWING BORDER ANIMATION
+========================================= */
+#mode::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    padding: 2px;
+
+    background: linear-gradient(45deg,
+            #ff006e,
+            #8338ec,
+            #3a86ff,
+            #06d6a0,
+            #ffbe0b);
+
+    background-size: 300% 300%;
+
+    animation: borderGlow 6s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+/* =========================================
+   BORDER GLOW ANIMATION
+========================================= */
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
