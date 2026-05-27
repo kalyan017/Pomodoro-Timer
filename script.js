@@ -27,7 +27,7 @@ function startTimer() {
 
 start.addEventListener("click", () => {
     if (min == 0) {
-        alert("please choose a timer option");
+        alert("please choose a timer option🤦‍♀️");
         return;
     }
     if (is_running) {
@@ -60,6 +60,10 @@ stop.addEventListener("click", () => {
 });
 
 reset.addEventListener("click", () => {
+    if (min == 0) {
+        alert("please choose a timer option😊");
+        return;
+    }
     clearInterval(timer);
     is_running = false;
     min = Number(mode.value);
